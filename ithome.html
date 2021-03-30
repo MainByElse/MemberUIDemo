@@ -131,16 +131,18 @@
         </div>
         <div class="vip-introduction-container">
             <swiper class="swiper-container" :options="swiperOptions">
-                <swiper-slide class="swiper-item">
-                    Slide 1
-                </swiper-slide>
-                <swiper-slide class="swiper-item">
-                    Slide 2
-                </swiper-slide>
-                <swiper-slide class="swiper-item">
-                    Slide 3
+                <swiper-slide class="swiper-slide-container" v-for="(item, index) in introductions">
+                    <div class="swiper-item">
+                        <img class="header" :src="item.headerUrl">
+                        <p class="title">{{item.title}}</p>
+                        <p class="desc">{{item.desc}}</p>
+                        <div class="card-container">
+                            <p>占位</p>
+                        </div>
+                    </div>
                 </swiper-slide>
             </swiper>
+            <div>叉号</div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js"></script>
@@ -183,10 +185,27 @@
                 },
                 swiperOptions: {
                     loop: false,
-                    slidesPerView: 2,
-                    spaceBetween: 30,
+                    slidesPerView: 1.4,
+                    spaceBetween: 15,
                     centeredSlides: true,
-                }
+                },
+                introductions: [
+                    {
+                        title: "专属会员标识",
+                        desc: "专属标识，彰显你的与众不同",
+                        headerUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F30%2F20180430134113_gphba.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619664355&t=955b19496dd4ddb86468167b43ac8343"
+                    },
+                    {
+                        title: "专属会员标识",
+                        desc: "专属标识，彰显你的与众不同",
+                        headerUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F30%2F20180430134113_gphba.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619664355&t=955b19496dd4ddb86468167b43ac8343"
+                    },
+                    {
+                        title: "专属会员标识",
+                        desc: "专属标识，彰显你的与众不同",
+                        headerUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201804%2F30%2F20180430134113_gphba.jpg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619664355&t=955b19496dd4ddb86468167b43ac8343"
+                    },
+                ]
             },
             computed: {
                 userHead: function () {
