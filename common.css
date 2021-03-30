@@ -1,0 +1,414 @@
+﻿html {
+    color: #333333;
+    /*font-size: 62.5%;*/
+    font-size: 2.666667vw;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 78%;
+    }
+}
+
+a, blockquote, body, code, dd, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, iframe, img, input, label, li, object, ol, p, q, small, span, strong, table, tbody, td, th, tr, ul {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+body {
+    background: #F2F3F6;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, Arial, PingFang SC, Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    -webkit-text-size-adjust: none;
+    /*max-width: 640px;*/
+}
+
+.night body {
+    background: #000;
+}
+
+a {
+    color: #272a30;
+    text-decoration: none
+}
+
+a, a:active, a:focus, a:hover, a:visited {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a, img {
+    -webkit-touch-callout: none
+}
+
+li, ol, ul {
+    list-style: none
+}
+
+input[type=password], input[type=text], textarea {
+    outline: 0;
+    background: #fff;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    resize: none;
+    -webkit-appearance: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0;
+    vertical-align: middle
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: 400;
+    font-style: normal
+}
+
+button {
+    border: 0;
+    outline: none;
+    background: rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-size: 100%
+}
+
+q:after, q:before {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input, select, textarea {
+    border-radius: 0;
+    font-size: 9pt;
+    outline: none;
+}
+
+textarea {
+    white-space: pre-wrap
+}
+
+legend {
+    color: #000
+}
+
+.clear {
+    clear: both
+}
+
+.hide {
+    display: none
+}
+/*不可滚动*/
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+/*苹果全面屏处理*/
+/*@media only screen and (device-width: 375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
+    .footer .footer-box .ft {
+        padding-bottom: 2.4rem;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height:896px) and (-webkit-device-pixel-ratio:3) {
+    .footer .footer-box .ft {
+        padding-bottom: 2.4rem;
+    }
+}*/
+/*提示*/
+/*.signindialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 640px;
+}*/
+
+.signindialog .signindialog-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /*max-width: 640px;*/
+    z-index: 100;
+    background-color: rgba(0,0,0,.8);
+    cursor: pointer;
+}
+
+.signindialog .signindialog-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    background: #fff;
+    z-index: 300;
+    min-height: 12rem;
+    border-radius: 0.5rem;
+}
+
+.signindialog .signindialog-box #signindialog-anim {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -7.5rem;
+}
+
+.signindialog .signindialog-box .signindialog-anim {
+    display: none;
+    margin: 0 0 7.5rem 0;
+}
+
+.signindialog.has-coin .signindialog-box .signindialog-anim {
+    display: block;
+}
+
+.signindialog.has-coin .signindialog-box #signindialog-anim img {
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 370;
+}
+
+.signindialog .signindialog-box .signindialog-body .title {
+    font-size: 2rem;
+    color: #333333;
+    text-align: center;
+    margin: 4rem 0 3rem 0;
+    position: relative;
+}
+
+.signindialog .signindialog-box .signindialog-body p {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #333333;
+    position: relative;
+    height: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.signindialog .signindialog-box .signindialog-body p span:nth-child(1) {
+    position: absolute;
+    left: 2.7rem;
+}
+
+.signindialog .signindialog-box .signindialog-body p span:nth-child(2) {
+    position: absolute;
+    right: 2.7rem;
+    color: #e74737;
+}
+
+.signindialog.has-coin .signindialog-box .signindialog-body p span:nth-child(2) {
+    color: #fe9c00;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #333333;
+    position: relative;
+    height: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span:nth-child(1) {
+    position: absolute;
+    left: 2.7rem;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span:nth-child(3) {
+    position: absolute;
+    right: 2.7rem;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span {
+    line-height: 2.4rem;
+    padding: 0rem 0 0 2.4rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span:before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.4rem;
+    border-radius: 50%;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: rgb(102, 102, 102);
+    border-image: initial;
+    padding: 0.2rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span.active:before {
+    content: "";
+    display: none;
+}
+
+.signindialog .signindialog-box .signindialog-body .remind-time span.active {
+    background: url('//img.ithome.com/m/images/app/signin-ok.png') left center no-repeat;
+    background-size: 2.4rem;
+}
+
+.signindialog .signindialog-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 3rem 1rem;
+}
+
+.signindialog .signindialog-footer button {
+    cursor: pointer;
+    width: 11.967rem;
+    height: 3.9rem;
+    background-color: #f2f5f6;
+    border-radius: 1.95rem;
+    line-height: 3.9rem;
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+.signindialog .signindialog-footer button.it-red {
+    background-image: linear-gradient(45deg, #ff464e 0%, #fd5d27 100%);
+    color: #ffffff;
+}
+
+.signindialog .signindialog-box .signindialog-body .title.has-height {
+    height: 3rem
+}
+
+.signindialog .signindialog-box .signindialog-body .title span {
+    position: absolute;
+    left: 2.3rem;
+    bottom: 0;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    color: #333333;
+}
+
+.signindialog .signindialog-box .signindialog-body .title span i {
+    font-style: normal;
+    font-size: 3rem;
+    color: #ff464e;
+    padding: 0 1.2rem 0 0;
+}
+
+.signindialog .signindialog-box .signindialog-body .title button {
+    width: 6.633rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 1.5rem;
+    position: absolute;
+    right: 2.3rem;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background-color: #f2f5f6;
+    color: #333333;
+}
+
+.signindialog .signindialog-box .signindialog-body .title button.it-red {
+    background-image: linear-gradient(45deg, #ff464e 0%, #fd5d27 100%);
+    color: #ffffff;
+}
+
+/*night*/
+html.night {
+    background: #111;
+}
+
+.night .signindialog .signindialog-box {
+    background: #242424;
+}
+
+.night .signindialog .signindialog-box .signindialog-body .title button.it-red,
+.night .signindialog .signindialog-footer button {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+}
+
+.night .signindialog .signindialog-box .signindialog-body .title span i,
+.night .signindialog .signindialog-box .signindialog-body p span:nth-child(2) {
+    color: #c5566a
+}
+
+.night .signindialog .signindialog-box .signindialog-body .title,
+.night .signindialog .signindialog-box .signindialog-body .remind-time,
+.night .signindialog .signindialog-box .signindialog-body p span:nth-child(1),
+.night .signindialog .signindialog-box .signindialog-body .title span {
+    color: #999
+}
+
+.night .signindialog .signindialog-box .signindialog-body .remind-time span.active::after {
+    content: "";
+    display: block;
+    background: #242424;
+    opacity: 0.23;
+    filter: alpha(opacity=23);
+    -moz-opacity: 0.23;
+    -khtml-opacity: 0.23;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+}
